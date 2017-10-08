@@ -20,6 +20,12 @@ socket.onmessage = function (event) {
       console.log("YEET")
     }else if(event.data == '{"message":"CustomS"}'){
       document.getElementById("vibration").innerHTML = "CustomOP";
+    }else if(event.data == '{"message":"BPN"}' || '{"message":"BPP"}'){
+      if(event.data == '{"message":"BPN"}'){
+      document.getElementById("button").innerHTML = "button is not pushed";
+      }else if(event.data =='{"message":"BPP"}'){
+        document.getElementById("button").innerHTML = "button is pushed";
+      }
     }
 
   console.log('Received: ' + event.data);
