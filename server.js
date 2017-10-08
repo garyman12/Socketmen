@@ -60,7 +60,20 @@ var buttonState = button.read();   // read the value of the digital pin
 console.log(buttonState);      
 function checkState(){
   var buttonState = button.read();   // read the value of the digital pin
-  console.log(buttonState);          // write the value to the console for debugging
+  if(buttonState == 0) {
+    wss.clients.forEach(function each(client) {
+      var json = JSON.stringify({ message: 'BPN' });
+      client.send(json);
+      console.log('Sent: ' + json);
+    });
+  }else if(buttonState == 1){
+    wss.clients.forEach(function each(client) {
+      var json = JSON.stringify({ message: 'BPP' });
+      client.send(json);
+      console.log('Sent: ' + json);
+    });
+  }
+      
 }
 
 setInterval(checkState, 510);   
