@@ -6,12 +6,12 @@
         <script src="client.js"></script>
        <form onsubmit="test()">
                Input:
-               <input type="text">
+               <input type="text" id="textbox">
                <input type="submit" value="Submit">
        </form>
        <script>
                function test() {
-                var json = JSON.stringify({ message: 'custom' });
+                var json = JSON.stringify({ message: document.getElementById("textbox").value });
   socket.send(json);
   console.log(json)
                }
