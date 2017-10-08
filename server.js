@@ -9,8 +9,7 @@ server.listen(8080, '10.18.1.124');
 var wss = new WSS({ port: 8081 });
 var mraa = require('/usr/local/lib/node_modules/mraa');
 var groveSensor = require('/usr/local/lib/node_modules/jsupm_grove');
-var button = new mraa.Gpio(31);     // set up digital read on digital pin #5
-button.dir(mraa.DIR_IN);  
+
 
 wss.on('connection', function(socket) {
   console.log('Opened Connection 🎉');
@@ -53,5 +52,17 @@ var broadcast = function() {
     console.log('Sent: ' + json);
   });
 }
+
+var button = new mraa.Gpio(31);     // set up digital read on digital pin #5
+button.dir(mraa.DIR_IN);  
+
+var buttonState = button.read();   // read the value of the digital pin
+console.log(buttonState);      
+function checkState(){
+  var buttonState = button.read();   // read the value of the digital pin
+  console.log(buttonState);          // write the value to the console for debugging
+}
+
+setInterval(checkState, 510);   
 setInterval(broadcast, 100000);
 
