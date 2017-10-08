@@ -17,10 +17,10 @@ socket.onmessage = function (event) {
     if(event.data == '{"message":"a"}')
     {
       var Parsed = JSON.parse(event.data);
-      document.getElementById("butfeed").innerHTML = "test";
+      document.getElementById("butfeed").innerHTML = "Live update from Broadcast Message!";
       console.log(Parsed.message)
     }else if(event.data == '{"message":"CustomS"}'){
-      document.getElementById("vibration").innerHTML = "CustomOP";
+      document.getElementById("vibration").innerHTML = "Message from Custom page";
     }else if(event.data == '{"message":"BPN"}' || '{"message":"BPP"}'){
       if(event.data == '{"message":"BPN"}'){
       document.getElementById("button").innerHTML = "button is not pushed";
