@@ -53,4 +53,4 @@ var broadcast = function() {
   });
 }
 setInterval(broadcast, 100000);
-setInterval(clicktest, 2000);
+
