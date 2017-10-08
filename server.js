@@ -60,6 +60,7 @@ var buttonState = button.read();   // read the value of the digital pin
 console.log(buttonState);      
 function checkState(){
   var buttonState = button.read();   // read the value of the digital pin
+  console.log(buttonState);
   if(buttonState == 0) {
     wss.clients.forEach(function each(client) {
       var json = JSON.stringify({ message: 'BPN' });
