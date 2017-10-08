@@ -1,5 +1,5 @@
 
-var socket = new WebSocket('ws://10.18.0.162:8081/');
+var socket = new WebSocket('ws://10.18.1.124:8081/');
 socket.onopen = function(event) {
   console.log('Data Pipe Open');
   var json = JSON.stringify({ message: 'Hello' });

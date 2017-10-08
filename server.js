@@ -5,7 +5,7 @@ var WSS = require('ws').Server;
 
 var app = express().use(express.static('public'));
 var server = http.createServer(app);
-server.listen(8080, '10.18.0.162');
+server.listen(8080, '10.18.1.124');
 
 var wss = new WSS({ port: 8081 });
 wss.on('connection', function(socket) {
