@@ -5,7 +5,7 @@ var WSS = require('ws').Server;
 
 var app = express().use(express.static('public'));
 var server = http.createServer(app);
-server.listen(8080, '127.0.0.1');
+server.listen(8080, '10.18.0.162');
 
 var wss = new WSS({ port: 8081 });
 wss.on('connection', function(socket) {
@@ -17,23 +17,31 @@ wss.on('connection', function(socket) {
 
   socket.on('message', function(message) {
     console.log('Received: ' + message);
+    if(message == '{"message":"custom"}'){
+      console.log("ayyy");
+      wss.clients.forEach(function each(client) {
+        var json = JSON.stringify({ message: 'CustomS' });
+        client.send(json);
+        console.log('Sent: ' + json);
+      });
+    }
 
     wss.clients.forEach(function each(client) {
-      var json = JSON.stringify({ message: 'Something changed' });
+      var json = JSON.stringify({ message: 'STest123' });
       client.send(json);
       console.log('Sent: ' + json);
     });
   });
 
   socket.on('close', function() {
-    console.log('Closed Connection 😱');
+    console.log('Connection Pipe Closed');
   });
 
 });
 
 var broadcast = function() {
   var json = JSON.stringify({
-    message: 'Hello hello!'
+    message: 'a'
   });
 
   wss.clients.forEach(function each(client) {
@@ -41,4 +49,4 @@ var broadcast = function() {
     console.log('Sent: ' + json);
   });
 }
-setInterval(broadcast, 3000);
+setInterval(broadcast, 100000);

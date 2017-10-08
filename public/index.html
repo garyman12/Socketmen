@@ -1,18 +1,123 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <style media="screen">
-      td { vertical-align: top }
-    </style>
-  </head>
-  <body>
-    <p>
-      <button id="send">Send Message</button>
-      <button id="close">Close</button>
-    </p>
-    <ul id="log"></ul>
-    <script src="client.js"></script>
-  </body>
+    <head>
+        <title>Alexa Webserver</title>
+        <script src="scripts/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="client.js"></script>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse visible-xs">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="#">Webserver</a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Dashboard</a></li>
+                  <li><a href="#">Placeholder #1</a></li>
+                  <li><a href="#">Placeholder #2</a></li>
+                  <li><a href="#">Placeholder #3</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          
+          <div class="container-fluid">
+            <div class="row content">
+              <div class="col-sm-3 sidenav hidden-xs">
+                <h2>Webserver</h2>
+                <ul class="nav nav-pills nav-stacked">
+                  <li class="active"><a href="#section1">Dashboard</a></li>
+                  <li><a href="#section2">Placeholder #1</a></li>
+                  <li><a href="#section3">Placeholder #2</a></li>
+                  <li><a href="#section3">Placeholder #3</a></li>
+                </ul><br>
+              </div>
+              <br>
+              
+              <div class="col-sm-9">
+                <div class="well">
+                  <h4>Statistics</h4>
+                  <p>These are some of the statistics for the current Alexa Webserver.</p>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="well">
+                      <h4>Button Feed</h4>
+                      <p id="butfeed"></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="well">
+                      <h4>Button</h4>
+                      <p id="button"></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="well">
+                      <h4>Vibration</h4>
+                      <p id="vibration"></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="well">
+                      <h4>Text</h4>
+                      <p>Text</p> 
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="well">
+                      <p>Text</p> 
+                      <p>Text</p> 
+                      <p>Text</p> 
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="well">
+                      <p>Text</p> 
+                      <p>Text</p> 
+                      <p>Text</p> 
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="well">
+                      <p>Text</p> 
+                      <p>Text</p> 
+                      <p>Text</p> 
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="well">
+                      <p>Text</p> 
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="well">
+                      <p>Text</p> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+    </body>
 </html>
