@@ -16,8 +16,9 @@ socket.onmessage = function (event) {
     console.log(event.data);
     if(event.data == '{"message":"a"}')
     {
+      var Parsed = JSON.parse(event.data);
       document.getElementById("butfeed").innerHTML = "test";
-      console.log("YEET")
+      console.log(Parsed.message)
     }else if(event.data == '{"message":"CustomS"}'){
       document.getElementById("vibration").innerHTML = "CustomOP";
     }else if(event.data == '{"message":"BPN"}' || '{"message":"BPP"}'){

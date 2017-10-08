@@ -78,5 +78,5 @@ function checkState(){
 }
 
 setInterval(checkState, 510);   
-setInterval(broadcast, 100000);
+setInterval(broadcast, 5000);
 
