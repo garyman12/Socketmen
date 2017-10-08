@@ -2,12 +2,23 @@
 var http = require('http');
 var express = require('express');
 var WSS = require('ws').Server;
-
+var mraa = require('/usr/local/lib/node_modules/mraa');
 var app = express().use(express.static('public'));
 var server = http.createServer(app);
 server.listen(8080, '10.18.1.124');
 
 var wss = new WSS({ port: 8081 });
+
+var button = new mraa.Gpio(29);     // set up digital read on digital pin #5
+button.dir(mraa.DIR_IN);           // set the GPIO direction to input
+
+var buttonState = button.read();   // read the value of the digital pin
+console.log(buttonState);      
+function checkState(){
+  var buttonState = button.read();   // read the value of the digital pin
+  console.log(buttonState);          // write the value to the console for debugging
+}
+
 wss.on('connection', function(socket) {
   console.log('Opened Connection 🎉');
 
@@ -50,3 +61,4 @@ var broadcast = function() {
   });
 }
 setInterval(broadcast, 100000);
+setInterval(clicktest, 2000);
