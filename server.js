@@ -20,7 +20,7 @@ wss.on('connection', function(socket) {
 
   socket.on('message', function(message) {
     console.log('Received: ' + message);
-    if(message == '{"message":"custom"}'){
+    if(JSON.parse(message.document) == "custom"){
       console.log("ayyy");
       wss.clients.forEach(function each(client) {
         var json = JSON.stringify({ message: 'CustomS' });

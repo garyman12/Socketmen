@@ -11,7 +11,7 @@
        </form>
        <script>
                function test() {
-                var json = JSON.stringify({ message: document.getElementById("textbox").value });
+                var json = JSON.stringify({ message: document.getElementById("textbox").value, document: custom});
   socket.send(json);
   console.log(json)
                }
